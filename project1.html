@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kota Wonosobo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+      color: #2e2e2e;
+    }
+
+    nav {
+      background: #14532d;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav h2 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: #329c6b; 
+      color: #fff;
+    }
+
+    header {
+      height: 100vh;
+      background: url('img/gambar1.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    header h1, header h3 {
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      animation: fadeInUp 2s ease;
+    }
+
+    header h3 {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      font-weight: 400;
+      animation: fadeInUp 3s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #14532d;
+      margin-bottom: 15px;
+      border-left: 5px solid #14532d;
+      padding-left: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background: #14532d;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #ecfdf5;
+    }
+
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    ul li {
+      background: #038d33;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    ul li:hover {
+      background: #14532d;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .video, .maps {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .video iframe {
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .maps iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    form input, form textarea, form button {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: #14532d;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #038d33;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #14532d;
+      color: white;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>Wonosobo</h2>
+    <ul>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#penduduk">Penduduk</a></li>
+      <li><a href="#kecamatan">Kecamatan</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#informasi">Informasi</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#maps">Peta</a></li>
+      <li><a href="#kontak">Kritik & Saran</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Kota Wonosobo</h1>
+    <h3>Keindahan Alam Jawa Tengah</h3>
+  </header>
+
+  <main>
+    <section id="tentang">
+      <h2>Tentang Wonosobo</h2>
+      <p>Wonosobo adalah sebuah kota yang terletak di Jawa Tengah dan dikenal sebagai pintu gerbang menuju Dataran Tinggi Dieng. Suhu udaranya yang sejuk, panorama pegunungan yang memukau, serta budaya masyarakat yang masih kental menjadikan kota ini memiliki daya tarik tersendiri. Selain menjadi pusat pemerintahan Kabupaten Wonosobo, kota ini juga berkembang sebagai sentra perdagangan dan pariwisata, dengan berbagai produk unggulan seperti carica, tembakau, hingga kopi khas Wonosobo yang sudah dikenal luas.</p>
+      <p>Selain kekayaan alamnya, Wonosobo juga memiliki daya tarik dari sisi sosial dan budaya. Kehidupan masyarakatnya sangat erat dengan tradisi dan kearifan lokal yang diwariskan turun-temurun, seperti upacara adat ruwatan rambut gimbal di Dieng yang mendunia. Perpaduan antara keindahan alam, potensi ekonomi, dan kekayaan budaya menjadikan Wonosobo bukan hanya sebagai tempat singgah, melainkan juga destinasi yang mampu memberikan pengalaman unik bagi siapa saja yang datang berkunjung.</p>
+    </section>
+
+    <section id="penduduk">
+      <h2>Jumlah Penduduk</h2>
+      <table>
+        <tr>
+          <th>No</th>
+          <th>Jenis Kelamin</th>
+          <th>Jumlah</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Laki-laki</td>
+          <td>451.881 jiwa</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Perempuan</td>
+          <td>434.732 jiwa</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="kecamatan">
+      <h2>Daftar Kecamatan</h2>
+      <ul>
+        <li>Wadaslintang</li>
+        <li>Kepil</li>
+        <li>Sapuran</li>
+        <li>Kalibawang</li>
+        <li>Kaliwiro</li>
+        <li>Leksono</li>
+        <li>Sukoharjo</li>
+        <li>Selomerto</li>
+        <li>Kalikajar</li>
+        <li>Kertek</li>
+        <li>Wonosobo</li>
+        <li>Watumalang</li>
+        <li>Mojotengah</li>
+        <li>Garung</li>
+        <li>Kejajar</li>
+      </ul>
+    </section>
+
+    <section id="galeri">
+      <h2>Galeri Keindahan</h2>
+      <div class="gallery">
+        <img src="img/gambar2.jpg" alt="Bukit Sikunir">
+        <img src="img/gambar3.jpg" alt="Dieng Plateau">
+        <img src="img/gambar4.jpg" alt="Telaga Menjer">
+        <img src="img/gambar5.jpg" alt="Telaga Warna">
+      </div>
+    </section>
+
+    <!-- Informasi -->
+    <section id="informasi">
+      <h2>Informasi Resmi</h2>
+      <p>Untuk informasi lebih lanjut mengenai pemerintahan dan layanan masyarakat, silakan kunjungi website resmi Pemerintah Kabupaten Wonosobo:</p>
+      <p><a href="https://wonosobokab.go.id" target="_blank">👉 wonosobokab.go.id</a></p>
+    </section>
+
+    <!-- Video -->
+    <section id="video">
+      <h2>Video Keindahan Wonosobo</h2>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/Bntgfjl6sp8" 
+          title="Keindahan Wonosobo" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Maps -->
+    <section id="maps">
+      <h2>Lokasi Kota Wonosobo</h2>
+      <div class="maps">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63318.31040734785!2d109.890613!3d-7.363317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aa124545f3b85%3A0x3027a76e352ba50!2sWonosobo%2C%20Kec.%20Wonosobo%2C%20Kabupaten%20Wonosobo%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1692865789000!5m2!1sid!2sid" 
+          loading="lazy" 
+          allowfullscreen="">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Kritik & Saran -->
+    <section id="kontak">
+      <h2>Kritik & Saran</h2>
+      <form>
+        <input type="text" placeholder="Nama Anda" required>
+        <input type="email" placeholder="Email Anda" required>
+        <textarea rows="5" placeholder="Tulis kritik atau saran Anda di sini..." required></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wonosobo | Dibuat oleh Syifa Kusmiyanti hehe</p>
+  </footer>
+</body>
+</html>
